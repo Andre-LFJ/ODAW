@@ -1,0 +1,18 @@
+Create database avaliacaoODAW;
+create table musica (codigo int auto_increment primary key, nomeMusica char(50), nomeAutor char(30), duracao time, ano year);
+create table usuario (login char(50) PRIMARY KEY, senha char(61));
+INSERT INTO `usuario`(`login`, `senha`) VALUES ('admin','admin');
+
+
+--------------
+materiais consultados:
+*os slides da professora*
+https://dev.mysql.com/doc/refman/8.0/en/date-and-time-types.html
+https://dev.mysql.com/doc/refman/8.0/en/time.html
+https://dev.mysql.com/doc/refman/8.0/en/year.html
+https://stackoverflow.com/questions/8829102/check-if-table-exists-without-using-select-from
+https://www.devmedia.com.br/criando-um-sistema-de-cadastro-e-login-com-php-e-mysql/37213
+https://www.devmedia.com.br/criando-sessao-para-login-no-php/27347
+https://htmlcolorcodes.com/
+https://stackoverflow.com/questions/12209438/logout-button-php/12209491
+https://stackoverflow.com/questions/4302386/how-to-center-links-in-html
