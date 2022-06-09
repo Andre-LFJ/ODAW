@@ -1,0 +1,179 @@
+<!-- 
+    O texto utilizado aqui foi gerado automaticamente por um gerador de "lero lero"
+    disponível no link: http://lerolero.bgnweb.com.br/leroleroti.html
+-->
+
+
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+<head>
+    <title>Exercício 3</title>
+    <style>
+        body {
+            background-color: #99ccff;
+        }
+
+        /* Style the header */
+        header {
+            background-color: rgb(218, 81, 81);
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        nav {
+            float: left;
+            width: 10%;
+            height: 1750px;
+            /* only for demonstration, should be removed */
+            background: rgb(255, 229, 123);
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        article {
+            color: black;
+            float: left;
+            padding: 20px;
+            width: 75%;
+            background-color: #96fdc1;
+            height: 1750px;
+            /* only for demonstration, should be removed */
+
+        }
+
+        footer {
+            background-color: rgb(218, 81, 81);
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        @media (max-width: 600px) {
+
+            nav,
+            article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+    <header>Exercício 3 html5</header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="#video">Vídeo</a></li>
+                <li><a href="#audio">Áudio</a></li>
+                <li><a href="#canvas">Canvas</a></li>
+            </ul>
+        </nav>
+        <article>
+            <a name="video"></a>
+            <h2>Vídeo</h2>
+
+            <p>Aqui está um vídeo (do youtube)</p>
+
+            <iframe width="1237" height="696" src="https://www.youtube.com/embed/WK47hxmVdv4"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <p>O mesmo vídeo mas em arquivo .mp4</p>
+            <video width="400" controls>
+                <source src="O Paradoxo do Hotel Infinito.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+            </video>
+
+            <a name="audio"></a>
+            <h2>Áudio</h2>
+
+
+            <p>Uma música</p>
+            <audio controls>
+                <source src="dance monkey lofi.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br>
+            <a href="https://www.youtube.com/watch?v=75CBgV6AYPk">Link da música no youtube</a>
+
+
+
+            <a name="canvas"></a>
+            <h2>Canvas</h2>
+            <p>bandeira do Brasil em canvas</p>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+                Your browser does not support the HTML canvas tag.</canvas>
+
+            <script>
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.beginPath();
+                ctx.arc(100, 50, 45, 0, 2 * Math.PI);
+
+                var c = document.getElementById("myCanvas");
+                var ctx = c.getContext("2d");
+                ctx.moveTo(100, 0);
+                ctx.lineTo(200, 50);
+                ctx.moveTo(0, 50);
+                ctx.lineTo(100, 0);
+                ctx.moveTo(0, 50);
+                ctx.lineTo(100, 100);
+                ctx.moveTo(200, 50);
+                ctx.lineTo(100, 100);
+                ctx.stroke();
+
+            </script>
+
+            <br><br>
+            <p>(Uma tentativa de uma) bandeira do Brasil usando svg</p>
+            <svg width="400" height="200">
+                <rect width="400" height="200" style="fill:rgb(0,128,0);stroke-width:10;stroke:rgb(0,128,0)" />
+                <circle cx="200" cy="100" r="75" stroke="yellow" stroke-width="4" fill="yellow" />
+                <losange cx="100" cy="100">
+
+
+
+                    Sorry, your browser does not support inline SVG.
+            </svg>
+
+
+        </article>
+    </section>
+
+    <footer>
+        <!-- 
+        <p style="text-align: center;">Footer</p>
+        
+        <a href="pagina1.html">Sobre nós</a>
+        -->
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+
+<html>
+
+<head>
+    <style>
+    </style>
+    <title>Título</title>
+</head>
+
+<body>
+    <p id="cpf"></p>
+
+    <p id="p2">Olá mundo!</p>
+
+    <p>Soma de dois valores</p>
+    <input type="text" id="numero1" value="">
+    <p>+</p>
+    <input type="text" id="numero2" value="">
+    <br><br>
+    <button onclick="somar()">Somar</button>
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("cpf").innerHTML = validarCpf("11111111111");
+        contas(10);
+        tamanhoFonte();
+        exercicio4();
+
+
+        function somar() {
+            var n1 = document.getElementById("numero1").value;
+            n1 = parseFloat(n1);
+            var n2 = document.getElementById("numero2").value;
+            n2 = parseFloat(n2);
+            var soma = n1 + n2
+            document.getElementById("resultado").innerHTML = soma;
+        }
+
+        function exercicio4() {
+            document.getElementById("p2").style.color = "blue";
+            document.getElementById("p2").style.fontSize = "25px";
+            document.getElementById("p2").style.fontFamily = "courier";
+        }
+        function tamanhoFonte() {
+            for (var tam = 6; tam > 0; tam--) {
+                document.write("<h" + tam + ">" + "texto qualquer" + "</h" + tam + ">");
+            }
+
+        }
+        function contas(n) {
+            document.write('N | ^2 | ^3 | Fatorial');
+            document.write("<br>");
+            var i, quadrado, cubo, fat;
+            for (i = 1; i <= n; i++) {
+                quadrado = Math.pow(i, 2);
+                cubo = Math.pow(i, 3);
+                document.write(i + '|');
+                document.write(quadrado + '|');
+                document.write(cubo + '|');
+                document.write(fatorial(i));
+                document.write("<br>");
+            }
+        }
+        function fatorial(fat) {
+            if (fat <= 1) {
+                return 1;
+            } else {
+                return fat * fatorial(fat - 1);
+            }
+        }
+        function validarCpf(cpf) {
+            var soma = 0;
+            var resto;
+            for (var i = 1; i <= 9; i++) {
+                soma = soma + parseInt(cpf.substring(i - 1, i)) * (11 - i);
+            }
+            resto = (soma * 10) % 11;
+            if ((resto == 10) || (resto == 11)) {
+                resto = 0;
+            }
+            if (resto != parseInt(cpf.substring(9, 10))) {
+                return false;
+            }
+            soma = 0;
+            for (var i = 1; i <= 10; i++) {
+                soma = soma + parseInt(cpf.substring(i - 1, i)) * (12 - i);
+            }
+            resto = (soma * 10) % 11;
+            if ((resto == 10) || (resto == 11)) {
+                resto = 0;
+            }
+            if (resto != parseInt(cpf.substring(10, 11))) {
+                return false;
+            }
+            return true;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

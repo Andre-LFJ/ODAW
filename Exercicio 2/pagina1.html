@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+
+<html>
+
+<head>
+
+    <title>Formulário</title>
+</head>
+
+<body>
+    <h2>HTML Forms</h2>
+
+    <form action="/action_page.php">
+        <label for="fname">Primeiro nome:</label><br>
+        <input type="text" id="fname" name="fname" value="" required><br>
+        <label for="lname">Sobrenome:</label><br>
+        <input type="text" id="lname" name="lname" value="" required><br>
+
+
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="pwd">Senha:</label><br>
+        <input type="password" id="pwd" name="pwd" minlength="8" required><br><br>
+
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Masculino</label><br>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Feminino</label><br>
+        <input type="radio" id="other" name="gender" value="other" required>
+        <label for="other">Outro</label><br><br>
+
+        <label for="cars">Selecione um carro:</label><br>
+        <select name="cars" id="cars" required>
+            <optgroup label="Brasileiros">
+                <option value="Gurgel">Gurgel</option>
+            </optgroup>
+            <optgroup label="Norte Americanos">
+                <option value="Ford">Ford</option>
+                <option value="Chevrolet">Chevrolet</option>
+            </optgroup>
+            <optgroup label="Alemães">
+                <option value="Mercedes">Mercedes</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Audi">Audi</option>
+            </optgroup>
+            <optgroup label="Japoneses">
+                <option value="Honda">Honda</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Nissan">Nissan</option>
+            </optgroup>
+        </select>
+        <br><br>
+        <label for="umpoucosobre">Escreva um pouco sobre você:</label><br>
+        <textarea id="umpoucosobre" name="umpoucosobre" rows="4" cols="50" required></textarea>
+
+        <br>
+        <input type="reset" value="Apagar">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br><br>
+    <a href="pagina0.html">Página inicial</a>
+
+
+</body>
+
+</html>

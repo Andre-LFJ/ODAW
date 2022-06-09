@@ -1,0 +1,48 @@
+body {
+    background-color: #99ccff;
+}
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+nav {
+    float: left;
+    width: 10%;
+    height: 2000px;
+    background: rgb(255, 229, 123);
+    padding: 20px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+article {
+    color: black;
+    float: left;
+    padding: 20px;
+    width: 75%;
+    background-color: #96fdc1;
+    height: 2000px;
+}
+footer {
+    background-color: rgb(218, 81, 81);
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+h1 {
+    text-align: center;
+}
+p1{
+    color:red;
+}
+p2{
+    font-family: times; 
+    font-size: 20px;
+}
+p3{
+    font-family:'Courier New', Courier, monospace;
+    font-size: 16px; 
+    color: blue;
+}

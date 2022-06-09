@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+
+<head>
+    <style>
+    </style>
+    <title>Exercício 6</title>
+</head>
+
+<body>
+    <p>Adivinhe um valor</p>
+
+    <input type="text" id="numero" value="">
+    <button onclick="adivinhar()" , id="tentar">tentar</button>
+    <p>Tentativas restantes: </p>
+    <p id="tentativas"></p>
+    <p id="resultado"></p>
+    <p>----------------</p>
+    <p>Remover caracteres repetidos de uma frase</p>
+    <input type="text" id="frase" value="">
+    <button onclick="testarFrase()" , id="tentar">remover</button>
+    <p id="resultado2"></p>
+    <br>
+    <p>----------------</p>
+    <p>Insira uma senha</p>
+    <input type="text" id="senha" value="">
+    <button onclick="testarSenha()" , id="tentar3">checar</button>
+    <p id="resultado3"></p>
+    <br>
+    <p>----------------</p>
+
+    <p>Insira uma sequencia de numeros para ser ordenada (separados por virgula)</p>
+    <input type="text" id="numeros" value="">
+    <button onclick="ordenarNumeros()" , id="tentar4">ordenar</button>
+    <p id="resultado4"></p>
+    <br>
+    <p>----------------</p>
+    <p>Insira um email</p>
+    <input type="text" id="email" value="">
+    <button onclick="testarEmail()" , id="tentar4">testar</button>
+    <p id="resultado5"></p>
+
+    <script>
+        var numero = Math.floor(Math.random() * 10);
+        //document.getElementById("resultado").innerHTML = numero;
+        var i = 0;
+        document.getElementById("tentativas").innerHTML = 5 - i;
+
+        function testarEmail() {
+            document.getElementById("resultado5").innerHTML = "<p></p>";
+            var temp = document.getElementById("email").value;
+            if (!(temp.includes("@") && temp.includes(".com"))) {
+                document.getElementById("resultado5").innerHTML = "o email precisa de um '@' e um '.com'";
+            }
+        }
+
+        function ordenarNumeros() {
+            var temp = document.getElementById("numeros").value;
+            temp = temp.split(",");
+            temp = temp.sort(compararNumeros);
+            document.getElementById("resultado4").innerHTML = temp;
+        }
+        function compararNumeros(a, b) {
+            return a - b;
+        }
+
+        function testarSenha() {
+            document.getElementById("resultado3").innerHTML = "<p></p>";
+            var temp = document.getElementById("senha").value;
+            if (temp.length < 6) {
+                document.getElementById("resultado3").innerHTML = "a senha precisa ter pelo menos 6 caracteres";
+            }
+            if (temNumero(temp) == false) {
+                document.getElementById("resultado3").innerHTML = "a senha precisa de um numero";
+            }
+            if (temCaracterEspecial(temp) == false) {
+                document.getElementById("resultado3").innerHTML = "a senha precisa de um caracter especial";
+            }
+            if (document.getElementById("resultado3").innerHTML == "<p></p>") {
+                document.getElementById("resultado3").innerHTML = "senha forte o suficiente";
+            }
+
+        }
+        function temCaracterEspecial(string) {
+            return /\W/.test(string);
+        }
+        function temNumero(string) {
+            return /\d/.test(string);
+        }
+        function testarFrase() {
+
+            var test = document.getElementById("frase").value; //The Set object lets you store unique values of any type,
+            var result = Array.from(new Set(test)).join('');
+            document.getElementById("resultado2").innerHTML = result;
+
+        }
+
+        function adivinhar() {
+            i++;
+            document.getElementById("tentativas").innerHTML = 5 - i;
+            for (i; i < 5; i++) {
+                var chute = document.getElementById("numero").value;
+                chute = parseInt(chute);
+                if (chute == numero) {
+                    document.getElementById("resultado").innerHTML = 'numero correto';
+                    DisableButton("tentar");
+                    break;
+                }
+                else if (chute > numero) {
+                    document.getElementById("resultado").innerHTML = 'tente um numero menor';
+                    break;
+                }
+                else {
+                    document.getElementById("resultado").innerHTML = 'tente um numero maior';
+                    break;
+                }
+            }
+            if (i == 5) {
+                document.getElementById("resultado").innerHTML = 'voce esgotou as tentativas';
+                DisableButton("tentar");
+            }
+        }
+        function DisableButton(idBotao) {
+            document.getElementById(idBotao).disabled = 'true';
+        }
+    </script>
+
+</body>
+
+</html>

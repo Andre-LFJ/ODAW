@@ -1,0 +1,3 @@
+admin|admin
+andre@andre.com|$2y$10$9Umf/pS7je9vs9/tCYNFiu4oKo4LDUj6ES9v1d84VqnOOWe23UJCy
+teste@teste.com|$2y$10$v7qHXtzOlLPYyyrFo9Ej0.WTbTiAqF0rrCxOZZM3vi5RcLzcVFfgi
